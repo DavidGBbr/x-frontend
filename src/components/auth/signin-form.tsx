@@ -1,6 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { Input } from "../ui/input";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const SigninForm = () => {
   const router = useRouter();
@@ -13,16 +15,17 @@ const SigninForm = () => {
 
   return (
     <>
-      <input
+      <Input
         placeholder="Digite seu e-mail"
         value={emailField}
-        onChange={(e) => setEmailField(e.target.value)}
+        onChange={(t) => setEmailField(t)}
+        icon={faHeart}
       />
-      <input
-        type="password"
+      <Input
+        password
         placeholder="Digite sua senha"
         value={passwordField}
-        onChange={(e) => setPasswordField(e.target.value)}
+        onChange={(t) => setPasswordField(t)}
       />
 
       <button onClick={handleEnterButton}>Entrar</button>
