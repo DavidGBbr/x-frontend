@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import Button from "../ui/button";
 
 const SigninForm = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const SigninForm = () => {
         onChange={(t) => setPasswordField(t)}
       />
 
-      <button onClick={handleEnterButton}>Entrar</button>
+      <Button label="Entrar" onClick={handleEnterButton} size={1} />
     </>
   );
 };
