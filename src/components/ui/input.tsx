@@ -14,6 +14,7 @@ type Props = {
   icon?: IconDefinition;
   value?: string;
   onChange?: (newValue: string) => void;
+  onEnter?: () => void;
 };
 
 export const Input = ({
@@ -23,9 +24,15 @@ export const Input = ({
   icon,
   value,
   onChange,
+  onEnter,
 }: Props) => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const handleKeyUp = (event: any) => {
+    if (event.code.toLowerCase() === "enter" && onEnter) {
+      onEnter();
+    }
+  };
   return (
     <div
       className={`has-[:focus]:border-white flex items-center h-14 rounded-3xl border-2 border-gray-700 ${
@@ -41,6 +48,7 @@ export const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange && onChange(e.target.value)}
+        onKeyUp={handleKeyUp}
       />
       {password && (
         <FontAwesomeIcon
