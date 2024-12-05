@@ -6,6 +6,7 @@ import SearchInput from "@/components/ui/search-input";
 import TrendingArea from "@/components/ui/trending-area";
 import { faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import RecommendationArea from "../../components/ui/recommendation-area";
 
 type Props = {
   children: React.ReactNode;
@@ -28,9 +29,10 @@ const Layout = ({ children }: Props) => {
         </div>
       </section>
       <section className="flex-1 max-w-lg">{children}</section>
-      <aside className="flex lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-gray-900">
+      <aside className="hidden lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-gray-900">
         <SearchInput />
         <TrendingArea />
+        <RecommendationArea />
       </aside>
     </main>
   );
