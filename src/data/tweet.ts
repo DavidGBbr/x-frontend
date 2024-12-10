@@ -1,14 +1,15 @@
-import User from "./user";
+import { Tweet } from "@/types/tweet";
+import { user } from "./user";
 
-export type Tweet = {
-  id: number;
-  user: User;
-  body: string;
-  image?: string;
-  likeCount: number;
-  commentCount: number;
-  retweetCount: number;
-  liked: boolean;
-  retweeted: boolean;
-  dataPost: Date;
+export const tweet: Tweet = {
+  id: 123,
+  user: user,
+  body: "Outro dia Magico",
+  image: "",
+  likeCount: 523,
+  commentCount: 61,
+  retweetCount: 0,
+  liked: true,
+  retweeted: false,
+  dataPost: new Date(2024, 8, 1, 10, 0, 0),
 };
