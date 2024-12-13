@@ -1,5 +1,6 @@
 "use client";
 import { Tweet } from "@/types/tweet";
+import { formatRelativeTime } from "@/utils/format-relative";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
 import {
   faRetweet,
@@ -37,7 +38,9 @@ const TweetItem = ({ tweet }: Props) => {
             <Link href={`/${tweet.user.slug}`} />
             {tweet.user.name}
           </div>
-          <div className="text-xs text-gray-500">@{tweet.user.slug}</div>
+          <div className="text-xs text-gray-500">
+            @{tweet.user.slug} - {formatRelativeTime(tweet.dataPost)}
+          </div>
         </div>
         <div className="py-4 text-lg">{tweet.body}</div>
         {tweet.image && (
