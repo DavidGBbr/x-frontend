@@ -1,3 +1,4 @@
+import ProfileFeed from "@/components/profile/profile-feed";
 import Button from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { user } from "@/data/user";
@@ -71,6 +72,7 @@ const Page = () => {
           </div>
         </div>
       </section>
+      <ProfileFeed />
     </div>
   );
 };
