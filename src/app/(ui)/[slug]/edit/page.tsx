@@ -1,6 +1,7 @@
 import Button from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { Input } from "@/components/ui/input";
+import Textarea from "@/components/ui/textarea";
 import { user } from "@/data/user";
 import { faCamera, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,6 +48,11 @@ const Page = () => {
         </label>
         <label>
           <p className="text-lg text-gray-500 mb-2">Bio</p>
+          <Textarea
+            placeholder="Descreva você mesmo"
+            rows={4}
+            value={user.bio}
+          />
         </label>
         <label>
           <p className="text-lg text-gray-500 mb-2">Link</p>
